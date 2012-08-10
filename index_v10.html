@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Nashville Softball Beer League</title>
+<script type="text/javascript" src= "https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+
+
+<link rel="stylesheet" type"text/css" href ="css/bootstrap.min.css"/>
+<link rel="stylesheet" type"text/css" href ="css/style.css"/>
+<script type="text/javascript" src = 'js/js_v5.js'></script>
+<script type="text/javascript" src = 'js/modal.js'></script>
+
+
+<script type="text/javascript" src = 'js/Stupidtable.js'></script>
+
+<!-- <script type="text/javascript" src = 'js/validate.js'></script> -->
+<!-- <script type="text/javascript" src = 'js/jquery.validate.js'></script> -->
+
+
+
+
+</head>
+<body>
+	<div id='pageWrap'>
+	<header>
+		<h1 class='siteName'>Nashville Softball Beer League</h1>
+	</header>
+
+	<div id='container'>
+
+	<div id='standings' class='sectionTitle'>
+		<h2>Standings</h2>
+	</div>
+	<!--end Standings-->
+
+
+		<table id='standingsTable' class="table table-bordered tablesorter">
+			<thead>
+			<tr>
+				<th class="type-string">Teams</th>	
+				<th class="type-int">Wins</th>
+				<th class="type-int">Losses</th>
+				<th class="type-int">Percentage</th>
+			</tr>
+			</thead>
+			<!--end row 1 headers-->
+			<tbody id='standingsBody'>
+		<!-- here goes the dynamically created team names -->
+		</table>
+<!--END standingsTable-->
+
+	<div id='schedule' class='sectionTitle'>
+		<h2>Schedule</h2>
+	</div><!--end Schedule-->
+
+	<div id='scheduleTable'>
+		<table class="table table-bordered">
+			<tr>
+				<th>Week 1</th>	
+				<th>Week 2</th>
+				<th>Week 3</th>
+				<th>Week 4</th>
+				<th>Week 5</th>
+				<th>Week 6</th>
+			</tr>
+			<!--end row 1 headers-->
+			<tr id="game1">
+				<td>bobcats @ wildcats <br />
+		    <form class="scoreForm">
+		    <input name='w1Away1' type='text' class='scoreInputs' id='w1Away1' size='2'>
+		    <input name='w1Home1' type='text' class='scoreInputs' id='w1Home1' size='2'><br />
+			</form></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+			</tr>
+			<tr id="game2">	
+				<td>C @ D <br />
+			<form class="scoreForm">
+			<input name='w1Away2' type='text' class='scoreInputs' id='w1Away2' size='2'>
+		    <input name='w1Home2' type='text' class='scoreInputs' id='w1Home2' size='2'><br />
+			<input type='submit' name='submit' class='scoreInputs' value='add week scores'>
+			</form></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+			
+		</table>
+		<!--end table-->
+
+	</div><!--scheduleTable-->
+
+<a class="btn" data-toggle="modal" href="#myModal"  >Add Team</a>
+
+
+<!--Start  team add modal box-->
+<div class="modal hide" id="myModal">
+<div class="modal-header">
+<button type="button" class="close" data-dismiss="modal">×</button>
+
+<form name='signUp' id='signUp'>
+		<div>
+			<label for ='teamName' class='label'>Team Name:</label>
+		    <input type ='text' name ='teamName' class='required stored' id ='teamName'size='36'>
+		</div>
+		<!--End Team Name-->
+		<div>
+			<label for ='managerName' class='label'>Manager Name:</label>
+		    <input name='managerName' type='text' class='required stored' id='managerName' size='36'>
+		</div>
+		<!--End Manager Name-->
+		<div>
+			<label for='contactNumber' class='label'>Contact Number:</label>
+		    <input name='contactNumber' type='text' id='contactNumber' class='required stored' size='10'>
+		</div>
+		<!--End Contact Number-->
+		<div>
+			<label for ='address' class='label'>Address:</label>
+		    <input name='address' type='text' class='required stored' id='address1' size='36'><br />
+		    <input name='address' type='text' class='stored' id='address2' size='36'>
+		</div>
+		<!--End Address-->
+		<div>
+			<label for='city' class='label'>City:</label>
+		    <input name='city' type='text' class='stored' id='city' size='36'>
+		</div>
+		<!--End City-->
+		<div>
+		 	<label for='state'class='label'>State:</label>
+		    <select name='state'  class='stored' id='state'>
+		    <option value="AL">AL</option>
+			<option value="AK">AK</option>
+			<option value="AZ">AZ</option>
+			<option value="AR">AR</option>
+			<option value="CA">CA</option>
+			<option value="CO">CO</option>
+			<option value="CT">CT</option>
+			<option value="DE">DE</option>
+			<option value="DC">DC</option>
+			<option value="FL">FL</option>
+			<option value="GA">GA</option>
+			<option value="HI">HI</option>
+			<option value="ID">ID</option>
+			<option value="IL">IL</option>
+			<option value="IN">IN</option>
+			<option value="IA">IA</option>
+			<option value="KS">KS</option>
+			<option value="KY">KY</option>
+			<option value="LA">LA</option>
+			<option value="ME">ME</option>
+			<option value="MD">MD</option>
+			<option value="MA">MA</option>
+			<option value="MI">MI</option>
+			<option value="MN">MN</option>
+			<option value="MS">MS</option>
+			<option value="MO">MO</option>
+			<option value="MT">MT</option>
+			<option value="NE">NE</option>
+			<option value="NV">NV</option>
+			<option value="NH">NH</option>
+			<option value="NJ">NJ</option>
+			<option value="NM">NM</option>
+			<option value="NY">NY</option>
+			<option value="NC">NC</option>
+			<option value="ND">ND</option>
+			<option value="OH">OH</option>
+			<option value="OK">OK</option>
+			<option value="OR">OR</option>
+			<option value="PA">PA</option>
+			<option value="RI">RI</option>
+			<option value="SC">SC</option>
+			<option value="SD">SD</option>
+			<option value="TN">TN</option>
+			<option value="TX">TX</option>
+			<option value="UT">UT</option>
+			<option value="VT">VT</option>
+			<option value="VA">VA</option>
+			<option value="WA">WA</option>
+			<option value="WV">WV</option>
+			<option value="WI">WI</option>
+			<option value="WY">WY</option>
+			<option value="WY">WY</option>
+		  </select>
+		</div>
+		<!--End State-->
+		<div>
+			<label for='zip' class='label'>Zip Code:</label>
+		    <input name='zip' type='text' class='required stored' id='zip' size='5'>
+		</div>
+		<!--End Zip Code-->
+		<div>
+			<label for ='sponsor' class='label'>Sponsor Name:</label>
+		    <input name='sponsor' type='text' class='stored' id='sponsor' size='36'>
+		</div>
+		<!--End Sponsor Name-->
+		<div class='cardType'>Credit Card Type:</div>
+		 <div class='indent'>
+		 <input type='radio' name='cc' id='mc' value='mc' checked='checked'>
+		   <label for='mc'>Mastercard</label>
+		 <input type='radio' name='cc' id='visa' value='visa'>
+		   <label for='visa'>Visa</label>
+		 <input type='radio' name='cc' id='amex' value>  
+		   <label for='amex'>American Express</label>
+		 </div>		 
+			<!--End Card Type-->
+		<div>
+			<label for ='cardNumber' class='label'>Credit Card Number:</label>
+		    <input name='cardNumber' type='text' class='required stored' id='cardNumber' size='36'>
+		</div>
+		<!--End Credit Card Number-->
+		<div>
+		<label for='expiration'>Expiration Date:</label>
+			<select name='month' id='month'>
+				<option value="01">January</option>
+			    <option value="02">February</option>
+			    <option value="03">March</option>
+			    <option value="04">April</option>
+			    <option value="05">May</option>
+			    <option value="06">June</option>
+			    <option value="07">July</option>
+			    <option value="08">August</option>
+			    <option value="09">September</option>
+			    <option value="10">October</option>
+			    <option value="11">November</option>
+			    <option value="12">December</option>
+			</select>	
+			<select name='year' id='year'>
+				<option value="12">2012</option>
+				<option value="13">2013</option>
+				<option value="14">2014</option>
+				<option value="15">2015</option>
+			</select>
+		</div>
+		<!--Close Expiration-->
+		 <input type='text' name='iWins' id='iWins' value='0' class='hidden'>
+		 <input type='text' name='iLoss' id='iLoss' value='0' class='hidden'>		   
+		 <div>
+		 <input type='submit' name='submit' id='submit' value='Submit'>
+		 </div>
+		<!--End Submit Button-->
+</form> <!-- END name='signup' id='signup' -->
+</div>
+</div>
+<!--end modal box-->
+ 
+</div><!--end container-->
+<footer></footer>
+
+</div> <!--end pageWrap-->
+</body>
+</html>
