@@ -1,0 +1,1 @@
+This exercise was to set up a fictional beer league using JS and local storage.
